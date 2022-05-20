@@ -49,11 +49,6 @@ public class Address {
   public void updateAddress(String city, String state) {
     synchronized (player.getMutex()) {
       LOGGER.info("Become Free Agent");
-      try {
-        Thread.sleep(5000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
       this.city = city;
       this.state = state;
       LOGGER.info(player.getFirstName() + " " + player.getLastName() + " "
@@ -108,12 +103,7 @@ public class Player {
 
   public void winChampion() {
     synchronized (mutex) {
-      LOGGER.info("Sleep 2s to win champion");
-      try {
-        Thread.sleep(2000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
+      LOGGER.info("Playing hard to win champion");
       this.champions += 1;
       LOGGER.info("Win one more champion, now the total champion is " + this.champions);
     }
